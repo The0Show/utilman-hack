@@ -1,0 +1,42 @@
+{
+  "name": "utilman-hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "app": "electron .",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The0Show/utilman-hack.git"
+  },
+  "keywords": [],
+  "author": "The0Show",
+  "license": "ISC",
+  "build": {
+    "appId": "com.the0show.utilman-hack",
+    "productName": "utilman.exe hack",
+    "copyright": "Copyright © 2021 ${author}",
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator",
+      "icon": "icon.ico"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/The0Show/utilman-hack/issues"
+  },
+  "homepage": "https://github.com/The0Show/utilman-hack#readme",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "node-fetch": "^2.6.1",
+    "windows": "^0.0.9",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5"
+  }
+}

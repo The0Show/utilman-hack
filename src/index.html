@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+        <style>
+            .header {
+                text-align: center;
+                font-size: 60px; /*this is stolen straight from something i made*/
+                font-family: arial;
+            }
+            body {
+                background-color: #ff6b63; /*just set hex to desired backround color. ill go with a pastel red for now*/
+                position: absolute;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                top: 50%;
+            }
+            .main {
+              text-align: center;
+              font-size: 24px; /*this being from another one of my projects? no way!*/
+              font-family: arial;
+            }
+            .centered {
+              text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="header">utilman.exe hack</h1>
+        <p class="main">Enter the application you want to be able to access on the login screen below.</p>
+
+        <div class="input-group mb-3">
+            <button class="btn btn-primary" type="button" id="selectFileButton">Select</button>
+            <!--note to self. do not change the placeholder.-->
+            <input type="text" readonly id="selectFileBox" class="form-control" placeholder="" aria-describedby="button-addon1">
+        </div>
+
+        <div class="centered">
+            <button type="button" id="applyButton" disabled class="btn btn-primary">Apply</button> <button type="button" id="revertButton" class="btn btn-primary">Revert</button>
+        </div>
+        
+        <!--i suck at remembering to save things.-->
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </body>
+</html>
+<!-- bootstrap docs: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
