@@ -1,11 +1,25 @@
 // Imports
 const { app, BrowserWindow, dialog, Menu, ipcMain } = require('electron');
 const Registry = require('winreg');
-const UpdateManager = new (require('./Managers/UpdateManager'))('The0Show/utilman-hack', '1.0.0')
+const UpdateManager = new (require('./Managers/UpdateManager'))('The0Show/utilman-hack', '1.1.0')
 
 let mainWindow;
 
 app.on('ready', async () => {
+    const aaaa = {
+        type: 'warning',
+        buttons: ['OK', 'Contact The0Show'],
+        defaultId: 0,
+        title: `Disclaimer`,
+        detail: "This program was made for educational/entertainment purposes. The creator of this program and it's contributors will not be responible for any damage caused by this program. If you have any questions/concerns, please contact The0Show.",
+    }
+        
+    const response = dialog.showMessageBoxSync(null, aaaa)
+
+    if(response === 1){
+        require('electron').shell.openExternal('http://the0show.com/contact')
+    }
+
     const updatecheck = await UpdateManager.CheckForUpdates()
 
     if(!updatecheck[0]){
@@ -59,6 +73,7 @@ app.on('ready', async () => {
 
     mainWindow.setTitle('utilman.exe hack');
     mainWindow.loadURL(`file://${__dirname}/src/index.html`);
+    mainWindow.setIcon('./icon.ico')
 });
 
 ipcMain.on('selectEXE', async (event, arg) => {
